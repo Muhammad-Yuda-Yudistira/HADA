@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FilmController;
+use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('/api/film', FilmController::class);
+// Route::resource('/api/film', FilmController::class);
+Route::get('/api/movie', [MovieController::class, 'index']);
+Route::get('/api/movie/{page}', [MovieController::class, 'show']);

@@ -13,20 +13,32 @@
 <body>
     <div class="grid-container">
         <div class="grid-x">
-            @foreach ($tv as $t)
+            @foreach ($movies as $movie)
             <div class="cell small-4 auto">
                 <div class="card" style="width: 300px;">
                     <div class="card-divider">
-                        <h4>{{ $t['title'] }}</h4>
+                        <h4>{{ $movie['release_date'] }}</h4>
                     </div>
-                    <img src="https://api.themoviedb.org{{ $t['poster_path'] }}">
+                    <img src="https://image.tmdb.org/t/p/w500{{ $movie['poster_path'] }}">
                     <div class="card-section">
-                        <p>{{ $t['overview'] }}</p>
+                        <h4>{{ $movie['title'] }}</h4>
+                        <h6>Rating: {{ $movie['vote_average'] }}</h6>
+                        <p>{{ $movie['overview'] }}</p>
                     </div>
                 </div> 
             </div>
             @endforeach
         </div>
+        {{-- pagination --}}
+        <nav aria-label="Pagination">
+            <ul class="pagination text-center">
+                <li class="pagination-previous disabled">Previous</li>
+                @for ($i = 1; $i <= $totalPages; $i++)
+                    <li><a href="http://127.0.0.1:8000/api/movie/{{ $i }}" aria-label="Page 2"> {{ $i }}</a></li>
+                @endfor
+                <li class="pagination-next"><a href="#" aria-label="Next page">Next</a></li>
+            </ul>
+        </nav>
     </div>
 
     <!-- Compressed JavaScript -->
