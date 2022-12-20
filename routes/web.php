@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\TVController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 // Route::resource('/api/film', FilmController::class);
-Route::get('/api/movie', [MovieController::class, 'index']);
-Route::get('/api/movie/{page}', [MovieController::class, 'show']);
+Route::get('/api/movies', [MovieController::class, 'index']);
+Route::get('/api/movies/{page}', [MovieController::class, 'show']);
+Route::get('/api/tv', [TVController::class, 'index']);
+Route::get('/api/tv/{page}', [TVController::class, 'show']);
