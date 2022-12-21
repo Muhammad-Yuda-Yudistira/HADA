@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\FilmController;
-use App\Http\Controllers\MovieController;
-use App\Http\Controllers\TVController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TVController;
+use App\Http\Controllers\FilmController;
+use App\Http\Controllers\AnimeController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('api.layouts.page');
 });
 // Route::resource('/api/film', FilmController::class);
 Route::get('/api/movies', [MovieController::class, 'index']);
 Route::get('/api/movies/{page}', [MovieController::class, 'show']);
 Route::get('/api/tv', [TVController::class, 'index']);
 Route::get('/api/tv/{page}', [TVController::class, 'show']);
+Route::get('/api/anime', [AnimeController::class, 'index']);
+Route::get('/api/anime/{page}', [AnimeController::class, 'page']);

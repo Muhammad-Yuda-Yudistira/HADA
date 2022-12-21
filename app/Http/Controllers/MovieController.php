@@ -13,7 +13,7 @@ class MovieController extends Controller
         $totalResults = $movies['total_results'];
         $dates = $movies['dates'];
         $movies = $movies['results'];
-        return view('api.index', [
+        return view('api.movies.index', [
             'title' => 'Movies',
             'movies' => $movies,
             'totalPages' => $totalPages,

@@ -1,38 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $title }}</title>
+@extends('api.layouts.main')
 
-    <!-- Compressed CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
-
-</head>
-<body>
-    {{-- menu --}}
-    <div class="top-bar">
-        <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li class="menu-text">HADA Film</li>
-            <li>
-              <a href="/api/movies">Movies</a>
-              <ul class="menu vertical">
-                
-              </ul>
-            </li>
-            <li><a href="/api/tv">TV</a></li>
-            <li><a href="/api/animes">Animes</a></li>
-          </ul>
-        </div>
-        <div class="top-bar-right">
-          <ul class="menu">
-            <li><input type="search" placeholder="Search"></li>
-            <li><button type="button" class="button">Search</button></li>
-          </ul>
-        </div>
-    </div>
+@section('content')
 
     {{-- card --}}
     <div class="grid-container">
@@ -67,7 +35,4 @@
         </nav>
     </div>
 
-    <!-- Compressed JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
-</body>
-</html>
+@endsection
