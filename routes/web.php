@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TVController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\AnimeController;
+use App\Http\Controllers\AsiaDramaScrapperController;
 use App\Http\Controllers\MovieController;
 
 /*
@@ -18,7 +19,7 @@ use App\Http\Controllers\MovieController;
 */
 
 Route::get('/', function () {
-    return view('api.layouts.page');
+    return view('home', ['title' => 'Homapage']);
 });
 // Route::resource('/api/film', FilmController::class);
 Route::get('/api/movies', [MovieController::class, 'index']);
@@ -27,3 +28,4 @@ Route::get('/api/tv', [TVController::class, 'index']);
 Route::get('/api/tv/{page}', [TVController::class, 'show']);
 Route::get('/api/anime', [AnimeController::class, 'index']);
 Route::get('/api/anime/{page}', [AnimeController::class, 'page']);
+Route::get('/api/asiadrama', [AsiaDramaScrapperController::class, 'scrape']);
