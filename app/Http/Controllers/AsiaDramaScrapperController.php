@@ -1,50 +1,27 @@
 <?php
 
-include('');
 namespace App\Http\Controllers;
 
 use DOMDocument;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+require 'vendor/simple_html_dom/simple_html_dom.php';
 
 class AsiaDramaScrapperController extends Controller
 {
     public function scrape()
 {
-   // Inisialisasi sesi cURL
-   $ch = curl_init();
+    return "Halaman Asia drama";
+//    // Ambil file HTML
+//     $html = file_get_html('https://mydramalist.com/search?adv=titles&ty=68,77&co=3,2&so=newest&or=desc');
 
-   // Atur opsi cURL
-   curl_setopt($ch, CURLOPT_URL, "https://www.imdb.com/chart/boxoffice/?ref_=nv_ch_cht");
-   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//     // Ambil semua element dengan kelas "myClass"
+//     $elements = $html->find('div.b-primary');
 
-   // Jalankan permintaan cURL
-   $response = curl_exec($ch);
+//     var_dump($elements);
 
-   // Tutup sesi cURL
-   curl_close($ch);
-
-   // Buat objek DOMDocument baru
-   $doc = new DOMDocument();
-
-   // Muat HTML ke dalam DOMDocument
-   @$doc->loadHTML($response);
-
-   // Dapatkan semua element dengan kelas "title"
-   $titles = $doc->getElementsByTagName("titleColumn");
-
-   // Buat array untuk menyimpan judul film
-   $movies = array();
-
-   // Iterasi setiap element title
-   foreach ($titles as $title) {
-       // Dapatkan element a yang terdapat dalam element title
-       $anchor = $title->getElementsByTagName("a")[0];
-       // Tambahkan judul film ke array movies
-       $movies[] = $anchor->nodeValue;
-   }
-
-   // Kembalikan array movies
-   return $movies;
+//     foreach($elements as $element) {
+//     // Lakukan sesuatu dengan element
+//     }
 }
 }

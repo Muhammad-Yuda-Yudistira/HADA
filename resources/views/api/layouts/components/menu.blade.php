@@ -5,12 +5,16 @@
         <li class="menu-text">HADA Film</li>
         <li>
           <a href="/api/movies">Movies</a>
-          <ul class="menu vertical">
-            
-          </ul>
         </li>
-        <li><a href="/api/tv">TV</a></li>
-        <li><a href="/api/anime">Anime</a></li>
+        <li>
+          <a href="/api/tv">TV</a>
+        </li>
+        <li>
+          <a href="/api/anime">Anime</a>
+        </li>
+        <li>
+          <a href="/api/asiadrama">Asia Drama</a>
+        </li>
       </ul>
     </div>
     <div class="top-bar-right">
